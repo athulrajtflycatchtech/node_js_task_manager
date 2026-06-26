@@ -1,0 +1,15 @@
+Client
+  ↓
+Routes
+  ↓
+Controllers
+  ↓
+Services
+  ↓
+Repositories (TypeORM)
+  ↓
+PostgreSQL
+
+Errors
+  ↓
+Error Middleware

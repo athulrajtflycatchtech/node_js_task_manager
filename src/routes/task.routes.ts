@@ -15,7 +15,7 @@ router.get("/", getTasks);
 
 router.get("/:id", getTaskById);
 
-router.post("/", createTask);
+router.post( "/", validateCreateTask, createTask );
 
 router.put("/:id", updateTask);
 

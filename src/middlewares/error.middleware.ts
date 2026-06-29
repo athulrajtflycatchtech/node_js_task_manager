@@ -1,3 +1,5 @@
+//error.middleware.ts is created to keep error handling in one common place.
+
 import { ErrorRequestHandler } from "express";
 import { AppError } from "../errors/AppError";
 

@@ -20,12 +20,6 @@ export const getTaskById = async ( req: Request, res: Response ) => {
 export const createTask = async ( req: Request, res: Response ) => {
   const { title } = req.body;
 
-  if (!title) {
-    return res.status(400).json({
-      message: "Title is required",
-    });
-  }
-
   const task = await taskService.createTask(title);
 
   res.status(201).json(task);

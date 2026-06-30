@@ -1,3 +1,5 @@
+// The controller handles the HTTP request and response.
+
 import { Request, Response } from "express";
 
 import * as taskService from "../services/task.service"; // "Import everything that task.service.ts exports and put it inside an object called taskService."

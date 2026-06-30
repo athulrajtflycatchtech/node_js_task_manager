@@ -1,3 +1,5 @@
+// The route decides which controller function runs.
+
 import { Router } from "express";
 import { validateCreateTask } from "../validations/task.validation";
 

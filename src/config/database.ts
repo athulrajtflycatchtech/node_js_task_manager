@@ -2,12 +2,11 @@
 
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import dotenv from "dotenv";
 import { Task } from "../entities/Task";
 import { env } from "./env";
 import { User } from "../entities/User";
 
-dotenv.config(); // This loads everything from your .env file into process.env.
+// console.log(env);
 
 export const AppDataSource = new DataSource({ // new DataSource({ -> This creates a connection configuration ( A DataSource is responsible for connecting your backend application to the database and managing that connection. )
   type: "postgres",

@@ -1,3 +1,6 @@
+// We use task.service.ts to keep the task business/database logic separate from the controller.
+// In short: task.service.ts keeps your task logic clean, reusable, and easier to test.
+
 import { AppDataSource } from "../config/database";
 import { Task } from "../entities/Task";
 import { NotFoundError } from "../errors/NotFoundError";

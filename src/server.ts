@@ -10,7 +10,7 @@ import { env } from "./config/env";
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // This allows the server to parse JSON request bodies.
 
 app.use("/tasks", taskRoutes);
 app.use("/auth", authRoutes);

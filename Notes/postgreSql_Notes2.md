@@ -12,7 +12,7 @@ sudo -u postgres psql
 
 4) Step 4 - Show the structure of the user table
 
-\d "user"
+\d user
 
 5) Step 5 - Show all users
 

@@ -14,7 +14,7 @@ export const getTasks = async ( req: Request, res: Response ) => {
 export const getTaskById = async ( req: Request, res: Response ) => {
   const taskId = Number(req.params.id);
 
-  const task = await taskService.getTaskById(taskId);
+  const task = await taskService.getTaskById(taskId); // Call the service function to get the task by ID
 
   res.json(task);
 };
@@ -22,7 +22,9 @@ export const getTaskById = async ( req: Request, res: Response ) => {
 export const createTask = async ( req: Request, res: Response ) => {
   const { title } = req.body;
 
-  const task = await taskService.createTask(title);
+  const userId = req.user!.userId;
+  
+  const task = await taskService.createTask(title, userId);
 
   res.status(201).json(task);
 };

@@ -8,15 +8,15 @@ import { AppDataSource } from "./config/database";
 import { errorMiddleware } from "./middlewares/error.middleware";
 import { env } from "./config/env";
 
-const app = express();
+const app = express(); // Create an Express application instance
 
 app.use(express.json()); // This allows the server to parse JSON request bodies.
 
-app.use("/tasks", taskRoutes);
-app.use("/auth", authRoutes);
+app.use("/tasks", taskRoutes); // Register Routes
+app.use("/auth", authRoutes); // Register Routes
 app.use(errorMiddleware); // Register Middleware
 
-AppDataSource.initialize()
+AppDataSource.initialize() // Initialize the database connection
   .then(() => {
     console.log("✅ Database connected");
 

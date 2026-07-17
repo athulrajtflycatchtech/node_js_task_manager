@@ -10,14 +10,15 @@ import {
   updateTask,
   deleteTask,
 } from "../controllers/task.controller";
+import { authMiddleware } from "../middlewares/auth.middleware";
 
 const router = Router();
 
-router.get("/", getTasks);
+router.get("/", authMiddleware, getTasks);
 
 router.get("/:id", getTaskById);
 
-router.post( "/", validateCreateTask, createTask );
+router.post( "/", authMiddleware, validateCreateTask, createTask );
 
 router.put("/:id", updateTask);
 

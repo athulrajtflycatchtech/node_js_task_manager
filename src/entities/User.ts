@@ -2,7 +2,10 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
+  OneToMany,
 } from "typeorm";
+
+import { Task } from "./Task";
 
 @Entity() // "Create a PostgreSQL table called user."
 export class User {
@@ -19,4 +22,7 @@ export class User {
 
   @Column()
   password!: string;
+
+  @OneToMany(() => Task, (task) => task.user) // "Create a one-to-many relationship with the Task entity."
+  tasks!: Task[]; // "This property will hold an array of Task objects associated with this User."
 }
